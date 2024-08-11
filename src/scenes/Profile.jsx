@@ -6,7 +6,7 @@ function ProfilePage() {
   const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:3000/user/profile', {
+    fetch('http://localhost:5000/user/profile', {
       method: 'GET',
       credentials: 'include',
     })
@@ -20,7 +20,7 @@ function ProfilePage() {
   };
 
   const handleUpdateName = () => {
-    fetch('http://localhost:3000/user/profile', {
+    fetch('http://localhost:5000/user/profile', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',

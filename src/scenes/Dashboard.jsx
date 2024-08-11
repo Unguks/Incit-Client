@@ -7,7 +7,7 @@ function Dashboard() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:3000/user/dashboard', {
+    fetch('http://localhost:5000/user/dashboard', {
       method: 'GET',
       credentials: 'include',
     })
@@ -18,7 +18,7 @@ function Dashboard() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://localhost:3000/user/logout', {
+      const response = await fetch('http://localhost:5000/user/logout', {
         method: 'POST',
         credentials: 'include',
       });

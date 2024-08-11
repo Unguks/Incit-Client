@@ -14,7 +14,7 @@ export default function Form() {
 
     const handleLogin = async () => {
         try {
-            const response = await fetch('http://localhost:3000/auth/login', {
+            const response = await fetch('http://localhost:5000/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ export default function Form() {
                             </button>
 
                             <a
-                                href="http://localhost:3000/auth/google"
+                                href="http://localhost:5000/auth/google"
                                 className='flex rounded-xl py-2 border-2 border-gray-100 items-center justify-center gap-2 active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out'
                             >
                                 <svg className='max-h-5' viewBox="0 0 48 48">
@@ -102,7 +102,7 @@ export default function Form() {
                             </a>
 
                             <a
-                                href="http://localhost:3000/auth/facebook"
+                                href="http://localhost:5000/auth/facebook"
                                 className='flex rounded-xl py-2 border-2 border-gray-100 items-center justify-center gap-2 active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out'
                             >
                                 <Facebook />

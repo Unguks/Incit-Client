@@ -18,7 +18,7 @@ function ResetPassword() {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/user/reset-password', {
+      const response = await fetch('http://localhost:5000/user/reset-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

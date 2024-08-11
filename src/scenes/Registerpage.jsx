@@ -17,7 +17,7 @@ const Signup = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:3000/auth/signup', { email, password, confirmPassword, name });
+            const response = await axios.post('http://localhost:5000/auth/signup', { email, password, confirmPassword, name });
             setMessage(response.data.message);
         } catch (error) {
             setMessage('Error: ' + error.response.data.message);
