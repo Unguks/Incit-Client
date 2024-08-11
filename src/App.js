@@ -4,6 +4,7 @@ import Loginpage from "./scenes/Loginpage";
 import Registerpage from "./scenes/Registerpage";
 import Dashboard from "./scenes/Dashboard";
 import Profile from "./scenes/Profile";
+import ResetPassword from "./scenes/Resetpassword";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/register" element={<Registerpage/>}></Route>
         <Route path="/profile" element={<Profile/>}></Route>
         <Route path="/dashboard" element={<Dashboard/>}></Route>
+        <Route path="/reset-password" element={<ResetPassword/>}></Route>
       </Routes>
     </BrowserRouter>
 

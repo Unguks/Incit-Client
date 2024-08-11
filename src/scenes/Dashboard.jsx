@@ -45,6 +45,9 @@ function Dashboard() {
       >
         Profile
       </Link>
+      <Link to="/reset-password" className="mb-6 px-4 py-2 bg-yellow-500 text-white rounded-md">
+        Reset Password
+      </Link>
       <button
         onClick={handleLogout}
         className="mb-6 px-4 py-2 bg-red-500 text-white rounded-md"
