@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function Dashboard() {
   const [dashboardData, setDashboardData] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:3000/user/dashboard', {
@@ -13,6 +16,23 @@ function Dashboard() {
       .catch(error => console.error('Error fetching dashboard data:', error));
   }, []);
 
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/user/logout', {
+        method: 'POST',
+        credentials: 'include',
+      });
+
+      if (response.ok) {
+        navigate('/login'); 
+      } else {
+        alert('Logout failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
+  };
+
   if (!dashboardData) {
     return <div>Loading...</div>;
   }
@@ -20,6 +40,17 @@ function Dashboard() {
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">User Dashboard</h1>
+      <Link to="/dashboard"
+        className="mb-6 px-4 py-2 bg-red-500 text-white rounded-md"
+      >
+        Profile
+      </Link>
+      <button
+        onClick={handleLogout}
+        className="mb-6 px-4 py-2 bg-red-500 text-white rounded-md"
+      >
+        Logout
+      </button>
       <div className="mb-4">
         <p>Total Users: {dashboardData.totalUsers}</p>
         <p>Active Users Today: {dashboardData.activeUsersToday}</p>

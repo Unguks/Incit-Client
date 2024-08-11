@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Loginpage from "./scenes/Loginpage";
 import Registerpage from "./scenes/Registerpage";
 import Dashboard from "./scenes/Dashboard";
+import Profile from "./scenes/Profile";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Loginpage/>}></Route>
         <Route path="/login" element={<Loginpage/>}></Route>
         <Route path="/register" element={<Registerpage/>}></Route>
+        <Route path="/profile" element={<Profile/>}></Route>
         <Route path="/dashboard" element={<Dashboard/>}></Route>
       </Routes>
     </BrowserRouter>
