@@ -11,10 +11,16 @@ function Dashboard() {
       method: 'GET',
       credentials: 'include',
     })
-      .then(response => response.json())
+      .then(response => {
+        if (response.status === 401) {
+          navigate('/login');
+        } else {
+          return response.json();
+        }
+      })
       .then(data => setDashboardData(data))
       .catch(error => console.error('Error fetching dashboard data:', error));
-  }, []);
+  }, [navigate]);
 
   const handleLogout = async () => {
     try {
