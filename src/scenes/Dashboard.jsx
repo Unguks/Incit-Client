@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Dashboard() {
   const [dashboardData, setDashboardData] = useState(null);
@@ -40,7 +40,7 @@ function Dashboard() {
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">User Dashboard</h1>
-      <Link to="/dashboard"
+      <Link to="/profile"
         className="mb-6 px-4 py-2 bg-red-500 text-white rounded-md"
       >
         Profile
@@ -57,7 +57,6 @@ function Dashboard() {
       <div className="mb-4">
         <p>Total Users: {dashboardData.totalUsers}</p>
         <p>Active Users Today: {dashboardData.activeUsersToday}</p>
-        <p>Average Active Users (Last 7 Days): {dashboardData.averageActiveUsersLast7Days.toFixed(2)}</p>
       </div>
       <table className="min-w-full bg-white">
         <thead>
@@ -70,7 +69,7 @@ function Dashboard() {
           </tr>
         </thead>
         <tbody>
-          {dashboardData.users.map(user => (
+          {dashboardData.users && dashboardData.users.map(user => (
             <tr key={user.email}>
               <td className="border px-4 py-2">{user.email}</td>
               <td className="border px-4 py-2">{user.name}</td>
