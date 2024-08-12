@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 function ProfilePage() {
   const [profileData, setProfileData] = useState(null);
   const [newName, setNewName] = useState('');
   const [isEditing, setIsEditing] = useState(false);
-  const navigate = useNavigate();
-
+  
   useEffect(() => {
     fetch('http://localhost:5000/user/profile', {
       method: 'GET',
