@@ -57,6 +57,7 @@ function Dashboard() {
       <div className="mb-4">
         <p>Total Users: {dashboardData.totalUsers}</p>
         <p>Active Users Today: {dashboardData.activeUsersToday}</p>
+        <p>Average 7 Days Users: {dashboardData.averageActiveUsersLast7Days}</p>
       </div>
       <table className="min-w-full bg-white">
         <thead>
